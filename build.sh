@@ -5,6 +5,7 @@ cd jdk15
 bash configure --with-jvm-variants=server --with-jvm-features=link-time-opt \
 --with-extra-cflags='-Ofast -march=native -mtune=broadwell -funroll-loops -fomit-frame-pointer -pipe -fstack-protector-strong --param=ssp-buffer-size=4 -fno-plt -fopenmp -pthread -w' \
 --with-extra-cxxflags='-Ofast -march=native -mtune=broadwell -funroll-loops -fomit-frame-pointer -pipe -fstack-protector-strong --param=ssp-buffer-size=4 -fno-plt -fopenmp -pthread -w'
+make clean
 make images
 ./build/*/images/jdk/bin/java -version
 make run-test-tier1
