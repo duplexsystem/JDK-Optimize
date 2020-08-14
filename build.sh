@@ -3,8 +3,8 @@ sudo aptitude install build-essential libcups2-dev openjdk-14-jdk libx11-dev lib
 git submodule update --init
 cd jdk15
 bash configure --with-jvm-variants=server --with-jvm-features=link-time-opt \
---with-extra-cflags='-Ofast -march=native -mtune=broadwell -funroll-loops -fomit-frame-pointer -pipe -fstack-protector-strong --param=ssp-buffer-size=4 -fno-plt -fopenmp -pthread -w' \
---with-extra-cxxflags='-Ofast -march=native -mtune=broadwell -funroll-loops -fomit-frame-pointer -pipe -fstack-protector-strong --param=ssp-buffer-size=4 -fno-plt -fopenmp -pthread -w'
+--with-extra-cflags='-Ofast -march=native -mtune=native -funroll-loops -fomit-frame-pointer -pipe -fstack-protector-strong --param=ssp-buffer-size=4 -fno-plt -fopenmp -pthread -w' \
+--with-extra-cxxflags='-Ofast -march=native -mtune=native -funroll-loops -fomit-frame-pointer -pipe -fstack-protector-strong --param=ssp-buffer-size=4 -fno-plt -fopenmp -pthread -w'
 make clean
 make images
 ./build/*/images/jdk/bin/java -version
