@@ -1,3 +1,4 @@
 [submodule "labs-openjdk-11"]
 	path = labs-openjdk-11
 	url = https://github.com/graalvm/labs-openjdk-11.git
+	branch = release/jvmci/19.3
