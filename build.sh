@@ -7,8 +7,8 @@ wget -N https://ci.adoptopenjdk.net/view/Dependencies/job/jtreg/lastSuccessfulBu
 tar -xf jtreg-5.1-b01.tar.gz
 cd jdk11u
 bash configure --with-jvm-variants=server --with-jvm-features=link-time-opt --enable-ccache --with-boot-jdk=..//jdk-11.0.8+10/ --with-jtreg=..//jtreg/ \
---with-extra-cflags='-Ofast -march=native -mtune=native -funroll-loops -w' \
---with-extra-cxxflags='-Ofast -march=native -mtune=native -funroll-loops -w'
+--with-extra-cflags='-w' \
+--with-extra-cxxflags='-w'
 make clean
 make images
 ./build/*/images/jdk/bin/java -version
