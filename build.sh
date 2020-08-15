@@ -9,10 +9,10 @@ wget -N https://ci.adoptopenjdk.net/view/Dependencies/job/jtreg/lastSuccessfulBu
 tar -xf jtreg-5.1-b01.tar.gz
 cd labs-openjdk-11
 make clean
-python build_labsjdk.py --configure-option=--disable-warnings-as-errors \
+python build_labsjdk.py --configure-option=--disable-warnings-as-errors --boot-jdk=..//jdk-11.0.8+10/ \
 --configure-option=--with-extra-cxxflags=-'-Ofast -march=native -mtune=native -funroll-loops -fomit-frame-pointer -pipe -fstack-protector-strong --param=ssp-buffer-size=4 -fno-plt -fopenmp -pthread -Werror' \
 --configure-option=--with-extra-cflags='-Ofast -march=native -mtune=native -funroll-loops -fomit-frame-pointer -pipe -fstack-protector-strong --param=ssp-buffer-size=4 -fno-plt -fopenmp -pthread -Werror' \
---configure-option=--with-jvm-features=link-time-opt --configure-option=--enable-ccache --configure-option=--with-boot-jdk=..//jdk-11.0.8+10/ --configure-option=--with-jtreg=..//jtreg/
+--configure-option=--with-jvm-features=link-time-opt --configure-option=--enable-ccache --configure-option=--with-jtreg=..//jtreg/
 make images
 ./build/*/images/jdk/bin/java -version
 make run-test-tier1
