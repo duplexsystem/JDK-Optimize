@@ -14,5 +14,3 @@ python build_labsjdk.py --configure-option=--disable-warnings-as-errors --boot-j
 --configure-option="--with-extra-cxxflags=-Ofast -march=native -mtune=native -funroll-loops -fomit-frame-pointer -pipe -fstack-protector-strong --param=ssp-buffer-size=4 -fno-plt -fopenmp -pthread -w" \
 --configure-option="--with-extra-cflags=-Ofast -march=native -mtune=native -funroll-loops -fomit-frame-pointer -pipe -fstack-protector-strong --param=ssp-buffer-size=4 -fno-plt -fopenmp -pthread -w" \
 --configure-option=--with-jvm-features=link-time-opt --configure-option=--enable-ccache --configure-option=--with-jtreg=..//jtreg/
-./build/*/images/jdk/bin/java -version
-make run-test-tier1
