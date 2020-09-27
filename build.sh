@@ -11,8 +11,8 @@ cd labs-openjdk-11
 git pull
 git reset master
 python build_labsjdk.py --configure-option=--disable-warnings-as-errors --boot-jdk=..//labsjdk-ce-11.0.8-jvmci-20.3-b01-debug/ \
---configure-option="--with-extra-cxxflags=-Ofast -fgraphite-identity -floop-nest-optimize -fdevirtualize-at-ltrans -fipa-pta -fno-semantic-interposition -fuse-linker-plugin -march=native -mtune=native -funroll-loops -fomit-frame-pointer -pipe -fstack-protector-strong --param=ssp-buffer-size=4 -fopenmp -pthread -w" \
---configure-option="--with-extra-cflags=-Ofast -fgraphite-identity -floop-nest-optimize -fdevirtualize-at-ltrans -fipa-pta -fno-semantic-interposition -fuse-linker-plugin -march=native -mtune=native -funroll-loops -fomit-frame-pointer -pipe -fstack-protector-strong --param=ssp-buffer-size=4 -fopenmp -pthread -w" \
---configure-option="--with-extra-ldflags=-Wl,--sort-common,--as-needed,-z,relro,-z,now -floop-nest-optimize -fdevirtualize-at-ltrans -fipa-pta -fno-semantic-interposition -fuse-linker-plugin -march=native -mtune=native -funroll-loops -fomit-frame-pointer -pipe -fstack-protector-strong --param=ssp-buffer-size=4 -fopenmp -pthread -w" \
+--configure-option="--with-extra-cxxflags=-O3 -fgraphite-identity -floop-nest-optimize -fdevirtualize-at-ltrans -fipa-pta -fno-semantic-interposition -fuse-linker-plugin -march=native -mtune=native -funroll-loops -fomit-frame-pointer -pipe -fstack-protector-strong --param=ssp-buffer-size=4 -fopenmp -pthread -w" \
+--configure-option="--with-extra-cflags=-O3 -fgraphite-identity -floop-nest-optimize -fdevirtualize-at-ltrans -fipa-pta -fno-semantic-interposition -fuse-linker-plugin -march=native -mtune=native -funroll-loops -fomit-frame-pointer -pipe -fstack-protector-strong --param=ssp-buffer-size=4 -fopenmp -pthread -w" \
+--configure-option="--with-extra-ldflags=-Wl,--sort-common,--as-needed,-z,relro,-z,now -O3 -floop-nest-optimize -fdevirtualize-at-ltrans -fipa-pta -fno-semantic-interposition -fuse-linker-plugin -march=native -mtune=native -funroll-loops -fomit-frame-pointer -pipe -fstack-protector-strong --param=ssp-buffer-size=4 -fopenmp -pthread -w" \
 --configure-option=--with-jvm-features=link-time-opt --configure-option=--enable-ccache \
 --configure-option=--with-jtreg=..//jtreg/
